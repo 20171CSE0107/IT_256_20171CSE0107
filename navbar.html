@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Vertical Nav Bar and pseudo elements</title>
+		<style>
+			
+			ul{
+				list-style-image:url("/home/6CSE2/20171cse0107/css/arrow.png");
+				
+			}
+			a{
+				color:hotpink;
+			}	
+			p::first-letter{
+				color:#F22688;
+				font-size:40px;
+				font-variant:capitalize;
+			}
+			p::first-line{
+				color:powderblue;
+				font-variant:small-caps;
+				
+			}
+			h3:before{
+				content:url("/home/6CSE2/20171cse0107/css/arrow.png");
+			}
+			h2:after{
+				content:url("/home/6CSE2/20171cse0107/css/arrow.png");
+			}
+			h1::selection{
+				color:red;
+				background-color:black;	
+			}
+			
+		</style>	
+	</head>
+	<body>
+		<ul>
+			<p>Click on the links below!!!</p>	
+			<p>There are different Hello world!!!-block types of secrets. She had held onto plenty of them during her life, but this one was different. She found herself holding onto the worst type. It was the type of secret that could gnaw away at your insides if you didn't tell someone about it, but it could end up getting you killed if you did.</p>
+		
+			<li><a href="/home/6CSE2/20171cse0107/css/border.html">Home</a></li>
+			<li><a href="/home/6CSE2/20171cse0107/css/idselector.html">News</a></li>
+			<li><a href="/home/6CSE2/20171cse0107/css/3mar-activity1.html">Contact</a></li>
+			<li><a href="/home/6CSE2/20171cse0107/css/3mar-activity">About</a></li>
+		</ul>
+
+		<h3>Random</h3>
+	
+		<h2>Random</h2>
+
+		<h1>Random</h1>
+	</body>
+		
+</html>
