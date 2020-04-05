@@ -1,0 +1,66 @@
+<!--Design HTML document using JavaScript that contains three short paragraphs of text,stacked on top of each other,with only enough of each showing so that the mouse cursor can be placed over some part of them.When the cursor is placed over the exposed part of any paragraph,it should rise to the top to become completely visible.(Hint Use zIndex and position property , Event attribute can be onmouseover or onclick, user defined function can be used )-->
+<html>
+    <head>
+        <title>Paragraph Stack Ordering</title>
+            
+            <style type="text/css">
+                #lay1
+                {
+                    border:solid thick black;
+                    background-color:brown;
+                    padding:10px;
+                    width:300px;
+                    height:200px;
+                    position:absolute;
+                    top:100px;
+                    left:200px;
+                    z-index:1;
+                }
+            #lay2
+                {
+                    border:solid thick black;
+                    background-color:gray;
+                    padding:10px;
+                    width:300px;
+                    height:200px;
+                    position:absolute;
+                    top:120px;
+                    left:220px;
+                    z-index:2;
+                }
+            #lay3
+                {
+                    border:solid thick black;
+                    background-color:white;
+                    padding:10px;
+                    width:300px;
+                    height:200px;
+                    position:absolute;
+                    top:140px;
+                    left:240px;
+                    z-index:3;
+                }
+            </style>
+    </head>
+    <body>
+        <script type=text/javascript>
+            var topLayer="lay3";
+            var origpos;
+            
+            function mover(toTop,pos)
+                {
+                    document.getElementById(toTop).style.zIndex="4";
+                    topLayer=toTop;
+                    origpos=pos;
+                }
+            
+            function moveBack()
+                {
+                    document.getElementById(topLayer).style.zIndex=origpos;
+                }
+        </script>
+        <p id=lay1 onMouseOver=mover('lay1','1'); onMouseOut=moveBack()>He sat staring at the person in the train stopped at the station going in the opposite direction. She sat staring ahead, never noticing that she was being watched. Both trains began to move and he knew that in another timeline or in another universe, they had been happy together</p>
+        <p id=lay2 onMouseOver=mover('lay2','2'); onMouseOut=moveBack()>It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at ease. The doctor said it would be less than a year. That gave him a year to live, something he'd failed to do with his daily drudgery of a routine that had passed as life until then.</p>
+        <p id=lay3 onMouseOver=mover('lay3','3'); onMouseOut=moveBack()>One dollar and eighty-seven cents. That was all. And sixty cents of it was in pennies. Pennies saved one and two at a time by bulldozing the grocer and the vegetable man and the butcher until one’s cheeks burned with the silent imputation of parsimony that such close dealing implied. One dollar and eighty-seven cents. And the next day would be Christmas...</p>
+    </body>
+ </html>
