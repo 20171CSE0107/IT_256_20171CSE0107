@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>Form Validation-assignmet</title>
+        <script type="text/javascript">
+            function validate()
+            {
+            var name = document.getElementById('Name').value;
+            var codition1 = /^[a-zA-Z]+$/ ;
+            var age = document.getElementById("Age").value;
+            var condition2 = /^[0-9]+$/;
+            var gender= document.getElementsByName("Gender");
+            if (name == "")
+            {
+                alert("Please fill your name!");
+                Name.focus();
+                return false;
+            }
+            else if (name.length <= 5 )
+            {
+                alert("Name is too small!");
+                Name.focus();
+                return false;
+            }
+            else if (!name.match(condition1))
+            {
+                alert("Your cannot include numbers!");
+                Name.focus();
+                return false;
+            }
+
+            else if(age == "")
+            {
+                alert("Please enter your age!");
+                Age.focus();
+                return false;
+            }
+            else if (age<15 || age>120)
+            {
+                alert("Age cannot be less than 15 or greater than 120");
+                Age.focus();
+                return false;
+            }
+            else if(!age.match(condition2))
+            {
+                alert("Age should contain only numbers!");
+                Age.focus();
+                return false;
+            }
+            else if ((gender[0].checked == false) && (gender[1].checked == false))
+            {
+                alert("Please choose your gender!");
+                return false;
+            }
+                alert("Sign-up Successful!!");
+                return true;
+            }
+        </script>   
+
+        <style>
+            p{
+                margin: 2px;
+            }
+            body{
+                background-color: black;
+                color: crimson;
+                text-align: center;
+                font-size: 20px;
+            }
+            .block1{
+                margin: auto;
+                height: 500px;
+                background-color: grey;
+                width: 500px;
+                
+            }
+            h1{
+                margin: 50px;
+            }
+            form{
+                display: inline;;
+            }
+            .submit{
+                background-color: crimson;
+                border: crimson;
+                font-size: 25px;
+                color:white;
+                padding: 8px;
+            }
+            #name,#age,#gender,#male,#female{
+                font-size: 20px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="block1">
+            <h1>Sign-up here!!</h1>
+                <form name="getdetails" onsubmit="return validate()">
+                    <p>Name : &nbsp;<input type="text" id="Name" placeholder="Enter your name here!"></p><br><br>
+                    <p>Age &nbsp;&nbsp;&nbsp;: &nbsp;<input type="text" id="Age" placeholder="Enter your age here!"></p><br><br>
+                    <p>Gender &nbsp;:<input type="radio" name="Gender" value="male">Male &nbsp;&nbsp; 
+                    <input type="radio" name="Gender" value="female">Female</p> <br> <br> <br>
+                    <input class="submit" type="submit" name="submit" value="submit">
+                </form>
+            </form>
+        </div>
+    </body>
+</html>
